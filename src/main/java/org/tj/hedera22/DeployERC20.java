@@ -39,13 +39,13 @@ public final class DeployERC20 {
 
         final Client client = HederaClient.CLIENT_TESTNET;
 
-        client.setOperator(Accounts.OPERATOR_ID, Accounts.OPERATOR_KEY);
+        client.setOperator(Accounts.OPERATOR_ID, PrivateKeys.OPERATOR_KEY);
 
         client.setDefaultMaxTransactionFee(new Hbar(1000000));
         client.setDefaultMaxQueryPayment(new Hbar(100000));
 
         final TransactionResponse fileTransactionResponse = new FileCreateTransaction()
-                .setKeys(Accounts.OPERATOR_KEY)
+                .setKeys(PrivateKeys.OPERATOR_KEY)
                 .setContents("")
                 .execute(client);
 
@@ -66,9 +66,9 @@ public final class DeployERC20 {
                 .setGas(4000000)
                 .setConstructorParameters(
                         new ContractFunctionParameters()
-                                .addUint256(BigInteger.valueOf(1_000_000))
-                                .addString("HBAR")
-                                .addString("HBAR")
+                                .addUint256(BigInteger.valueOf(2_000_000))
+                                .addString("HUSD")
+                                .addString("HUSD")
                 )
                 .execute(client);
 

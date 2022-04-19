@@ -21,7 +21,7 @@ public class CreateAccount {
         logger.info("customerPrivateKey: " + customerPrivateKey);
 
         final AccountId operatorId = Accounts.OPERATOR_ID;
-        final PrivateKey operatorPrivateKey = Accounts.OPERATOR_KEY;
+        final PrivateKey operatorPrivateKey = PrivateKeys.OPERATOR_KEY;
 
         final Client client = HederaClient.CLIENT_TESTNET;
         client.setOperator(operatorId, operatorPrivateKey);

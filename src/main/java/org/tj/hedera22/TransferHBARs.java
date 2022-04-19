@@ -16,7 +16,7 @@ public final class TransferHBARs {
 
     public static void main(String[] args) throws TimeoutException, PrecheckStatusException, ReceiptStatusException {
         final Client client = HederaClient.CLIENT_TESTNET;
-        client.setOperator(Accounts.OPERATOR_ID, Accounts.OPERATOR_KEY);
+        client.setOperator(Accounts.OPERATOR_ID, PrivateKeys.OPERATOR_KEY);
 
         final List<AccountId> beneficiaries = Arrays.asList(Accounts.PARTICIPANT_1, Accounts.PARTICIPANT_2);
         final Hbar amount = new Hbar(200);

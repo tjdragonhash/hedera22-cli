@@ -20,7 +20,7 @@ public class CLI {
     private final double FX = 0.221;
 
     private AccountId currentAccount = Accounts.OPERATOR_ID;
-    private PrivateKey currentPrivateKey = Accounts.OPERATOR_KEY;
+    private PrivateKey currentPrivateKey = PrivateKeys.OPERATOR_KEY;
 
     public CLI() {
         logger.info("Hedera CLI");
@@ -428,15 +428,15 @@ public class CLI {
         switch (option) {
             case 1:
                 currentAccount = Accounts.PARTICIPANT_1;
-                currentPrivateKey = Accounts.PARTICIPANT_1_KEY;
+                currentPrivateKey = PrivateKeys.PARTICIPANT_1_KEY;
                 break;
             case 2:
                 currentAccount = Accounts.PARTICIPANT_2;
-                currentPrivateKey = Accounts.PARTICIPANT_2_KEY;
+                currentPrivateKey = PrivateKeys.PARTICIPANT_2_KEY;
                 break;
             default:
                 currentAccount = Accounts.OPERATOR_ID;
-                currentPrivateKey = Accounts.OPERATOR_KEY;
+                currentPrivateKey = PrivateKeys.OPERATOR_KEY;
         }
     }
 

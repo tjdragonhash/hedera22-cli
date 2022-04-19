@@ -15,11 +15,11 @@ public class ApproveTransfer {
     public static void main(String[] args) throws PrecheckStatusException, TimeoutException, ReceiptStatusException {
         final String spender = Contracts.DLOBEX_ACC_ID.toSolidityAddress();
 
-        client.setOperator(Accounts.PARTICIPANT_1, Accounts.PARTICIPANT_1_KEY);
+        client.setOperator(Accounts.PARTICIPANT_1, PrivateKeys.PARTICIPANT_1_KEY);
         approve(spender, Contracts.TOKEN_HBAR_ACCOUNT);
         approve(spender, Contracts.TOKEN_USD_ACCOUNT);
 
-        client.setOperator(Accounts.PARTICIPANT_2, Accounts.PARTICIPANT_2_KEY);
+        client.setOperator(Accounts.PARTICIPANT_2, PrivateKeys.PARTICIPANT_2_KEY);
         approve(spender, Contracts.TOKEN_HBAR_ACCOUNT);
         approve(spender, Contracts.TOKEN_USD_ACCOUNT);
     }
@@ -31,7 +31,7 @@ public class ApproveTransfer {
                 .setGas(1_000_000)
                 .setFunction("approve", new ContractFunctionParameters()
                         .addAddress(spender)
-                        .addUint256(BigInteger.valueOf(50_000)))
+                        .addUint256(BigInteger.valueOf(2_000_000)))
                 .execute(client);
 
         final TransactionReceipt receipt = contractExecTransactionResponse.getReceipt(client);
