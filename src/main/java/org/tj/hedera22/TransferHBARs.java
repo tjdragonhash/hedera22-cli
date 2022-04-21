@@ -19,7 +19,7 @@ public final class TransferHBARs {
         client.setOperator(Accounts.OPERATOR_ID, PrivateKeys.OPERATOR_KEY);
 
         final List<AccountId> beneficiaries = Arrays.asList(Accounts.PARTICIPANT_1, Accounts.PARTICIPANT_2);
-        final Hbar amount = new Hbar(200);
+        final Hbar amount = new Hbar(400);
 
         for(AccountId beneficiary : beneficiaries) {
             final Hbar senderBalanceBefore = new AccountBalanceQuery()
